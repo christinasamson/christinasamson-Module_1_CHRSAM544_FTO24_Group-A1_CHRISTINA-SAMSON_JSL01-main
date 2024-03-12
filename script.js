@@ -1,12 +1,18 @@
 function validateSyntax() {
+    // Get the input value from the petInput element
     let input = document.getElementById('petInput').value;
-    // Validation logic goes here
-    let result = ''; // Placeholder for validation result
+    
+    // Define a regular expression pattern to check the syntax
+    /*: The pattern is enclosed within forward slashes, indicating the start and end of the regular expression.*/
+    /*This is a character set that matches any alphanumeric character.*/
 
-    // TODO: Write your validation logic here
-        // Check if input starts with 'pet_' and followed by alphanumeric characters
+    let pattern = /^pet_[a-zA-Z0-9]+$/;
 
-            document.getElementById('result').innerText = result;
+    if (pattern.test(input)) {
+        // If the input matches the pattern, set the result to "Valid Syntax"
+        document.getElementById('result').innerText = "Valid Syntax";
+    } else {
+        // If the input doesn't match the pattern, set the result to "Invalid Syntax"
+        document.getElementById('result').innerText = "Invalid Syntax";
+    }
 }
-
-
